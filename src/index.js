@@ -22,7 +22,7 @@ const END_POINT = "http://localhost:4000/api";
 
 async function getNav() {
   let api = new PortalApi(`${END_POINT}`);
-  let result = await api.getNavigation(1);
+  let result = await api.getNavigation();
   console.log(result.data);
 }
 
@@ -34,6 +34,6 @@ async function getPage(id) {
 
 
 getNav();
-getPage(1);
+getPage(4);
 
 
