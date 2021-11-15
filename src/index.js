@@ -3,6 +3,7 @@
 import axios from 'axios';
 
 export class PortalApi {
+
   constructor(endpoint) {
     this.endpoint = endpoint;
   }
@@ -21,20 +22,30 @@ export class PortalApi {
 const END_POINT = "http://localhost:4000/api";
 
 async function getNav(id) {
-  let api = new PortalApi(`${END_POINT}`);
-  let result = await api.getNavigation(id);
-  console.log(result.data);
+  try {
+
+    let api = new PortalApi(`${END_POINT}`);
+    let result = await api.getNavigation(id);
+    console.log(result.data);
+  }catch (e) {
+    console.log(`Please check the resource ID to be accessed for navigation.`);
+  }
 }
 
 async function getPage(id) {
-  let api = new PortalApi(`${END_POINT}`);
-  let result = await api.getPage(id);
-  console.log(result.data);
+  try {
+    let api = new PortalApi(`${END_POINT}`);
+    let result = await api.getPage(id);
+    console.log(result.data);
+  }
+  catch (e) {
+    console.log(`Please check the resource ID to be accessed for page.`);
+  }
 }
 
 // TODO: Pass the ID below
 
-// getNav(4);
-// getPage(1);
+getNav(4);
+getPage(1);
 
 
