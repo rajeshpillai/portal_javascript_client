@@ -20,9 +20,9 @@ export class PortalApi {
 
 const END_POINT = "http://localhost:4000/api";
 
-async function getNav() {
+async function getNav(id) {
   let api = new PortalApi(`${END_POINT}`);
-  let result = await api.getNavigation();
+  let result = await api.getNavigation(id);
   console.log(result.data);
 }
 
@@ -32,8 +32,9 @@ async function getPage(id) {
   console.log(result.data);
 }
 
+// TODO: Pass the ID below
 
-getNav();
-getPage(4);
+// getNav(4);
+// getPage(1);
 
 
